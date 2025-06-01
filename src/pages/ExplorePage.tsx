@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { videos } from '../data/videos';
 import VideoPlayer from '../components/VideoPlayer';
 import RelatedVideosPlayer from '../components/RelatedVideosPlayer';
@@ -8,7 +8,6 @@ import { motion } from 'framer-motion';
 
 const ExplorePage: React.FC = () => {
   const location = useLocation();
-  const navigate = useNavigate();
   const [currentIndex, setCurrentIndex] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
   

@@ -41,7 +41,7 @@ const trending = [
 
 const HomePage: React.FC = () => {
   return (
-    <div className="min-h-screen bg-katha-bg pt-4 pb-20">
+    <div className="min-h-screen container mx-auto bg-katha-bg pt-4 pb-20">
       <header className="px-4 mb-6">
         <motion.div
           initial={{ y: -20, opacity: 0 }}
@@ -53,7 +53,7 @@ const HomePage: React.FC = () => {
             <img src="/kaa-symbol.png" alt="Katha" className="w-10 h-10 mr-2" />
             <h1 className="text-3xl font-bold text-katha-primary">Katha</h1>
           </div>
-          <p className="text-sm text-katha-secondary opacity-70">Mythology in Reels</p>
+          {/* <p className="text-sm text-katha-secondary opacity-70">Mythology in Reels</p> */}
         </motion.div>
         
         <motion.p 
