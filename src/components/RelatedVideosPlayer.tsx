@@ -20,7 +20,7 @@ const RelatedVideosPlayer: React.FC<RelatedVideosPlayerProps> = ({ initialVideoI
     .filter(Boolean) as VideoReel[];
   
   // Add the initial video to the beginning of the related videos
-  const allVideos = [initialVideo, ...relatedVideos];
+  const allVideos = [...relatedVideos, initialVideo];
 
   const handleScroll = () => {
     if (!containerRef.current) return;

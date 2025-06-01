@@ -5,11 +5,11 @@ export const videos: VideoReel[] = [
     id: 'v1',
     title: 'Bhishma\'s Vow',
     description: 'A tale of unmatched devotion and sacrifice, where Bhishma pledges lifelong celibacy to protect his father\'s promise.',
-    category: 'ramayana',
+    category: 'mahabharata',
     videoUrl: '/videos/2.mp4',
     likes: 1542,
     comments: 87,
-    related: ['v2', 'v3', 'v4', 'v5'],
+    related: ['v2', 'v3', 'v4'],
     shares: 32
   },
   {
@@ -27,11 +27,11 @@ export const videos: VideoReel[] = [
     id: 'v3',
     title: 'Narasimha\'s Doorstep Kill',
     description: 'A demon king is slain by Narasimha, a half-man, half-lion incarnation of Vishnu, in his own home.',
-    category: 'ramayana',
+    category: 'god-vishnu',
     videoUrl: '/videos/4.mp4',
     likes: 1542,
     comments: 87,
-    related: ['v2', 'v3', 'v4', 'v5'],
+    related: ['v2', 'v4', 'v5'],
     shares: 32
   },
   {
@@ -42,7 +42,7 @@ export const videos: VideoReel[] = [
     videoUrl: '/videos/3.mp4',
     likes: 1542,
     comments: 87,
-    related: ['v2', 'v3', 'v4', 'v5'],
+    related: ['v2', 'v3', 'v5'],
     shares: 32
   },
   // {
