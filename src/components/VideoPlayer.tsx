@@ -145,12 +145,12 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({ video, isActive, onVideoEnd, 
             {/* Video info */}
             <div className="px-4 pb-6 z-10">
               <h3 className="text-katha-bg text-lg font-bold">{video.title}</h3>
-              <p className="text-katha-secondary text-sm">{video.description}</p>
+              {/* <p className="text-katha-secondary text-sm">{video.description}</p> */}
             </div>
             
             {/* Watch Related Stories button */}
             {!isRelated && (
-              <div className="px-4 pb-24 z-20">
+              <div className="px-4 pb-4 z-20">
                 <motion.button
                   onClick={handleWatchRelated}
                   className="w-full py-2 px-4 bg-katha-primary/80 text-katha-bg rounded-lg font-medium hover:bg-katha-primary transition-colors"
