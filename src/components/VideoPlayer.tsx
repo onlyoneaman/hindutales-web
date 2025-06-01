@@ -103,7 +103,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({ video, isActive, onVideoEnd, 
         className="relative h-full mx-auto overflow-hidden shadow-2xl border-x-8 border-[#fefce6]" 
         style={{ 
           width: '100%',
-          maxWidth: '390px', /* iPhone 12 Pro width */
+          maxWidth: '580px', /* iPhone 12 Pro width */
           maxHeight: '100vh',
         }}
       >
