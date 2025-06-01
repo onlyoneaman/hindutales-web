@@ -1,7 +1,7 @@
 import React from 'react';
 import { categories } from '../data/categories';
 import CategoryCard from '../components/CategoryCard';
-import { Sparkles, Heart, Search, Globe, Clock, ChevronRight } from 'lucide-react';
+import { Heart, Search, Globe, Clock, ChevronRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const moods = [
@@ -39,9 +39,15 @@ const trending = [
   { id: 'folk', title: 'Recently uncovered folk tales', icon: '📜' }
 ];
 
+// CSS variables for motion animations
+const cssVars = {
+  '--katha-secondary-rgb': '143, 145, 148',  // These RGB values should match your theme
+  '--katha-primary-rgb': '79, 94, 129'
+} as React.CSSProperties;
+
 const HomePage: React.FC = () => {
   return (
-    <div className="min-h-screen container mx-auto bg-katha-bg pt-4 pb-20">
+    <div className="min-h-screen container mx-auto bg-katha-bg pt-4 pb-20" style={cssVars}>
       <header className="px-4 mb-6">
         <motion.div
           initial={{ y: -20, opacity: 0 }}
@@ -81,8 +87,9 @@ const HomePage: React.FC = () => {
               key={mood.id}
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
+              whileHover={{ scale: 1.05, boxShadow: '0 10px 25px -5px rgba(0, 0, 0, 0.1)' }}
               transition={{ delay: index * 0.1, duration: 0.5 }}
-              className="flex-shrink-0 w-48 mr-3"
+              className="flex-shrink-0 w-48 mr-3 cursor-pointer"
             >
               <div className="bg-katha-secondary/10 rounded-xl p-4 h-full">
                 
@@ -112,8 +119,9 @@ const HomePage: React.FC = () => {
                 key={gem.id}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
+                whileHover={{ scale: 1.03, backgroundColor: 'rgba(143, 145, 148, 0.15)' }}
                 transition={{ delay: index * 0.1, duration: 0.5 }}
-                className="bg-katha-secondary/10 rounded-xl p-4"
+                className="bg-katha-secondary/10 rounded-xl p-4 cursor-pointer"
               >
                 <h3 className="text-katha-primary font-medium mb-1">{gem.title}</h3>
                 <p className="text-sm text-katha-secondary">{gem.description}</p>
@@ -139,8 +147,9 @@ const HomePage: React.FC = () => {
                 key={lang.code}
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
+                whileHover={{ scale: 1.1, backgroundColor: 'rgba(143, 145, 148, 0.2)' }}
                 transition={{ delay: index * 0.05, duration: 0.3 }}
-                className="px-3 py-1.5 bg-katha-secondary/10 rounded-full text-katha-primary text-sm hover:bg-katha-secondary/20 transition-colors"
+                className="px-3 py-1.5 bg-katha-secondary/10 rounded-full text-katha-primary text-sm transition-all"
               >
                 {lang.name}
               </motion.button>
@@ -165,8 +174,9 @@ const HomePage: React.FC = () => {
                 key={item.id}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
+                whileHover={{ scale: 1.03, backgroundColor: 'rgba(143, 145, 148, 0.15)' }}
                 transition={{ delay: index * 0.1, duration: 0.5 }}
-                className="bg-katha-secondary/10 rounded-xl p-4"
+                className="bg-katha-secondary/10 rounded-xl p-4 cursor-pointer"
               >
                 <div className="text-2xl mb-2">{item.icon}</div>
                 <h3 className="text-katha-primary font-medium">{item.title}</h3>
@@ -187,7 +197,9 @@ const HomePage: React.FC = () => {
               key={category.id}
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
+              whileHover={{ scale: 1.05 }}
               transition={{ delay: index * 0.1, duration: 0.5 }}
+              className="cursor-pointer"
             >
               <CategoryCard category={category} />
             </motion.div>
@@ -197,7 +209,7 @@ const HomePage: React.FC = () => {
       
       {/* Did You Know Section */}
       <section className="px-4">
-        <div className="bg-gradient-to-r from-katha-secondary/20 to-katha-primary/20 rounded-xl p-4">
+        <div className="bg-katha-secondary/20 rounded-xl p-4">
           <h2 className="text-lg font-semibold text-katha-primary mb-2">Did You Know?</h2>
           <p className="text-sm text-katha-secondary opacity-80">
             The Mahabharata is one of the longest epic poems ever written, 
