@@ -1,0 +1,13 @@
+This directory contains video files for the Katha app.
+
+Example files that should be placed here:
+- reel1.mp4
+- reel2.mp4
+- ramayana_preview.mp4
+- mahabharata_preview.mp4
+- krishna_preview.mp4
+- shiva_preview.mp4
+- creatures_preview.mp4
+- weapons_preview.mp4
+- folktales_preview.mp4
+- asuras_preview.mp4
