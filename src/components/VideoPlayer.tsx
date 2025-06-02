@@ -97,16 +97,16 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({ video, isActive, onVideoEnd, 
 
   // window.width or 580px
   const maxWidth = window.innerWidth < 400 ? window.innerWidth : 580;
+  const maxHeight = window.innerWidth < 400 ? `80vh` : '100vh';
 
   return (
     <div className="relative w-full h-full flex items-center justify-center bg-[#fefce6] overflow-hidden">
-      {/* Phone-like container with fixed width for desktop */}
       <div 
         className="relative h-full overflow-hidden shadow-2xl border-x-8 border-[#fefce6]" 
         style={{ 
           width: '100%',
-          maxWidth: `${maxWidth}px`, /* iPhone 12 Pro width */
-          maxHeight: '100vh',
+          maxWidth: `${maxWidth}px`,
+          maxHeight: `${maxHeight}`,
         }}
       >
         {/* Video element */}
