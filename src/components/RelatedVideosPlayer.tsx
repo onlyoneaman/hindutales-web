@@ -12,6 +12,7 @@ const RelatedVideosPlayer: React.FC<RelatedVideosPlayerProps> = ({ initialVideoI
   const navigate = useNavigate();
   const containerRef = useRef<HTMLDivElement>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const videoRefs = useRef<(HTMLDivElement | null)[]>([]);
   
   // Get the initial video and its related videos
   const initialVideo = videos.find(v => v.id === initialVideoId) || videos[0];
@@ -20,27 +21,41 @@ const RelatedVideosPlayer: React.FC<RelatedVideosPlayerProps> = ({ initialVideoI
     .filter(Boolean) as VideoReel[];
   
   // Add the initial video to the beginning of the related videos
-  const allVideos = [...relatedVideos, initialVideo];
+  const allVideos = [initialVideo, ...relatedVideos];
 
-  const handleScroll = () => {
-    if (!containerRef.current) return;
-    
-    const container = containerRef.current;
-    const scrollTop = container.scrollTop;
-    const itemHeight = window.innerHeight;
-    const index = Math.round(scrollTop / itemHeight);
-    
-    if (index !== currentIndex) {
-      setCurrentIndex(index);
-    }
-  };
-  
   useEffect(() => {
-    const container = containerRef.current;
-    if (container) {
-      container.addEventListener('scroll', handleScroll);
-      return () => container.removeEventListener('scroll', handleScroll);
-    }
+    // Create an IntersectionObserver to detect when videos are in view
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const index = videoRefs.current.findIndex(ref => ref === entry.target);
+          if (index !== -1) {
+            if (entry.isIntersecting) {
+              setCurrentIndex(index);
+            }
+          }
+        });
+      },
+      {
+        threshold: 0.7, // Video is considered "in view" when 70% is visible
+      }
+    );
+
+    // Observe all video containers
+    videoRefs.current.forEach((ref) => {
+      if (ref) {
+        observer.observe(ref);
+      }
+    });
+
+    return () => {
+      // Cleanup observer
+      videoRefs.current.forEach((ref) => {
+        if (ref) {
+          observer.unobserve(ref);
+        }
+      });
+    };
   }, []);
 
   const handleBack = () => {
@@ -56,6 +71,7 @@ const RelatedVideosPlayer: React.FC<RelatedVideosPlayerProps> = ({ initialVideoI
         {allVideos.map((video, index) => (
           <div 
             key={video.id}
+            ref={(el) => (videoRefs.current[index] = el)}
             className="h-screen w-full snap-start snap-always"
           >
             <VideoPlayer 
@@ -71,4 +87,4 @@ const RelatedVideosPlayer: React.FC<RelatedVideosPlayerProps> = ({ initialVideoI
   );
 };
 
-export default RelatedVideosPlayer; 
+export default RelatedVideosPlayer;

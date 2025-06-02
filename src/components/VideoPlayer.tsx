@@ -2,7 +2,6 @@ import React, { useRef, useState, useEffect } from 'react';
 import { Heart, MessageCircle, Share2, Pause, Play, Volume2, VolumeX, ChevronLeft } from 'lucide-react';
 import { VideoReel } from '../types';
 import { motion } from 'framer-motion';
-import { useNavigate } from 'react-router-dom';
 import { videos } from '../data/videos';
 
 interface VideoPlayerProps {
@@ -96,14 +95,17 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({ video, isActive, onVideoEnd, 
     window.location.href = `/explore?related=${video.id}`;
   };
 
+  // window.width or 580px
+  const maxWidth = window.innerWidth < 400 ? window.innerWidth : 580;
+
   return (
     <div className="relative w-full h-full flex items-center justify-center bg-[#fefce6] overflow-hidden">
       {/* Phone-like container with fixed width for desktop */}
       <div 
-        className="relative h-full mx-auto overflow-hidden shadow-2xl border-x-8 border-[#fefce6]" 
+        className="relative h-full overflow-hidden shadow-2xl border-x-8 border-[#fefce6]" 
         style={{ 
           width: '100%',
-          maxWidth: '580px', /* iPhone 12 Pro width */
+          maxWidth: `${maxWidth}px`, /* iPhone 12 Pro width */
           maxHeight: '100vh',
         }}
       >
