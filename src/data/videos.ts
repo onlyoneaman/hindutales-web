@@ -45,6 +45,61 @@ export const videos: VideoReel[] = [
     related: ['v2', 'v3', 'v5'],
     shares: 32
   },
+  {
+    id: 'v5',
+    title: 'Prahlad and Hiranyakashipu',
+    description: 'Prahlad, a devout devotee of Lord Vishnu, faces persecution from his father Hiranyakashipu, who seeks to destroy him. Despite his father\'s attempts to kill him, Prahlad remains steadfast in his devotion to Vishnu, who ultimately rescues him.',
+    category: 'god-vishnu',
+    videoUrl: '/videos/Prahlad and Hiranyakashipu.mp4',
+    likes: 1542,
+    comments: 87,
+    related: ['v2', 'v3', 'v4'],
+    shares: 32
+  },
+  {
+    id: 'v6',
+    title: 'Ekalavya\'s Thumb',
+    description: 'A story of betrayal and redemption, where Ekalavya, a skilled archer, sells his thumb to a Brahmin sage to learn the art of archery, only to be betrayed by his guru.',
+    category: 'mahabharata',
+    videoUrl: '/videos/Ekalavya Thumb.mp4',
+    likes: 1542,
+    comments: 87,
+    related: ['v2', 'v3', 'v4', 'v5'],
+    shares: 32
+  },
+  {
+    id: 'v7',
+    title: 'Charan Kanya',
+    description: 'A story of devotion and sacrifice, where a young girl named Charan Kanya, who is devoted to Lord Krishna, faces persecution from her father, who seeks to destroy her. Despite his attempts to kill her, Charan Kanya remains steadfast in her devotion to Krishna, who ultimately rescues her.',
+    category: 'krishna',
+    videoUrl: '/videos/charan kanya.mp4',
+    likes: 1542,
+    comments: 87,
+    related: ['v2', 'v3', 'v4', 'v5', 'v6'],
+    shares: 32
+  },
+  {
+    id: 'v8',
+    title: 'The Clever Weaver',
+    description: 'A story of wit and justice, where a poor weaver promises a magical turban to a greedy king, but cleverly uses wit to expose the king\'s greed and injustice.',
+    category: 'folk-tales',
+    videoUrl: '/videos/The Clever Weaver.mp4',
+    likes: 1542,
+    comments: 87,
+    related: ['v2', 'v3', 'v4', 'v5', 'v6', 'v7'],
+    shares: 32
+  },
+  {
+    id: 'v9',
+    title: 'King Shibi\'s Test',
+    description: 'King Shibi tests his son\'s devotion to his father\'s promise.',
+    category: 'folk-tales',
+    videoUrl: '/videos/King Shibi’s Test.mp4',
+    likes: 1542,
+    comments: 87,
+    related: ['v2', 'v3', 'v4', 'v5', 'v6', 'v7', 'v8'],
+    shares: 32
+  }
   // {
   //   id: 'v5',
   //   title: 'Bhishma\'s Vow',

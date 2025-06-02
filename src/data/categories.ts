@@ -20,8 +20,15 @@ export const categories: Category[] = [
     title: 'Vishnu Leela',
     description: 'Divine plays of Lord Vishnu',
     thumbnail: '/images/vishnu.jpg',
-    videoPreview: '/videos/4.mp4'
+    videoPreview: '/videos/Prahlad and Hiranyakashipu.mp4'
   },
+  {
+    id: 'folk-tales',
+    title: 'Folk Tales',
+    description: 'Stories passed through generations',
+    thumbnail: '/images/charan kanya.jpg',
+    videoPreview: '/videos/charan kanya.mp4'
+  }
   // {
   //   id: 'shiva',
   //   title: 'Shiva Legends',
